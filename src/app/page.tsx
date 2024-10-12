@@ -4,6 +4,8 @@ import { MyTitle } from "./components/my-title";
 import { MyListItems } from "./components/my-list";
 import { MyImage } from "./components/my-image";
 import { MyPhrase } from "./components/my-phrase";
+import { MyHeader } from "./components/my-header";
+import { MyFooter } from "./components/my-footer";
 
 export default function Home() {
   return (
@@ -17,7 +19,12 @@ export default function Home() {
       <MyListItems />
       <br />
       <MyImage />
+      <br />
       <MyPhrase />
+      <br />
+      <MyHeader />
+      <br />
+      <MyFooter />
     </div>
   );
 }
