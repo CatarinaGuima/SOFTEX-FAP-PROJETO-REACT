@@ -1,3 +1,5 @@
+"use client";
+
 import { MyButton } from "./components/my-button";
 import { MySquare } from "./components/my-square";
 import { MyTitle } from "./components/my-title";
@@ -6,6 +8,7 @@ import { MyImage } from "./components/my-image";
 import { MyPhrase } from "./components/my-phrase";
 import { MyHeader } from "./components/my-header";
 import { MyFooter } from "./components/my-footer";
+import { getAddress } from "../../get-address";
 
 type AvatarProps = {
   size: number;
@@ -14,7 +17,7 @@ type AvatarProps = {
 
 type CardProps = {
   children: React.ReactNode;
-}
+};
 
 function Avatar({ size }: AvatarProps) {
   console.log(size);
@@ -36,6 +39,13 @@ function Card({ children }: CardProps) {
 }
 
 export default function Home() {
+  let adress = "teste"
+  async function handleGetAddresses() {
+    const result = await getAddress("52051000");
+    adress = result;
+    console.log(adress);
+  }
+
   return (
     <div className="flex flex-col justify-center items-center ">
       <Avatar size={100} />
@@ -62,6 +72,16 @@ export default function Home() {
       <MyHeader />
       <br />
       <MyFooter />
+      <br />
+      <div>
+        <button
+          onClick={handleGetAddresses}
+          className="px-3 py-2 rounded-lg bg-primary text-[#fff]"
+        >
+          Obter endereço
+        </button>
+        <span>Endereço: {adress}</span>
+      </div>
     </div>
   );
 }
