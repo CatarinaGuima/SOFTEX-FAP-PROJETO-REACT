@@ -1,14 +1,15 @@
 "use client";
 
-import { MyButton } from "./components/my-button";
-import { MySquare } from "./components/my-square";
-import { MyTitle } from "./components/my-title";
-import { MyListItems } from "./components/my-list";
-import { MyImage } from "./components/my-image";
-import { MyPhrase } from "./components/my-phrase";
-import { MyHeader } from "./components/my-header";
-import { MyFooter } from "./components/my-footer";
+import { MyButton } from "../components/my-button";
+import { MySquare } from "../components/my-square";
+import { MyTitle } from "../components/my-title";
+import { MyListItems } from "../components/my-list";
+import { MyImage } from "../components/my-image";
+import { MyPhrase } from "../components/my-phrase";
+import { MyHeader } from "../components/my-header";
+import { MyFooter } from "../components/my-footer";
 import { getAddress } from "../../get-address";
+import { NavBar } from "@/components/header";
 
 type AvatarProps = {
   size: number;
@@ -48,6 +49,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center ">
+      <NavBar />
+      <br />
       <Avatar size={100} />
       <br />
       <Avatar size={75} />
@@ -80,6 +83,8 @@ export default function Home() {
         >
           Obter endereço
         </button>
+        <br />
+        <br />
         <span>Endereço: {adress}</span>
       </div>
     </div>
